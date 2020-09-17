@@ -1,0 +1,15 @@
+@import "template";
+$color:#FFF;
+$background: #5dca88;
+
+body {
+  text-align: center;
+
+  .link {
+    padding: 5px;
+  }
+
+  .btn {
+    @include heading-tag($color, $background)
+  }
+}
