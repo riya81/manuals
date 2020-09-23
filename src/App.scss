@@ -9,6 +9,18 @@ body {
     padding: 5px;
   }
 
+  .padding {
+    padding: 20px;
+  }
+
+
+
+  .tag {
+    @include heading-line-up-and-down(black);
+    width: 10%;
+    margin: 0px auto;
+  }
+
   .btn {
     @include heading-tag($color, $background)
   }

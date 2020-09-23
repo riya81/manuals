@@ -79,7 +79,6 @@ class windows
         {
             return window.setInterval(Callback, num);
         }
-
         this.onresize = () =>
         {
             return window.onresize

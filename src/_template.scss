@@ -285,7 +285,7 @@ body {
 	border-bottom: solid 3px black;
 }
 
-@mixin heading-line-up-and-down {
+@mixin heading-line-up-and-down($color) {
 	color: $color;
 	/*文字色*/
 	padding: 0.5em 0;

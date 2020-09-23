@@ -4470,6 +4470,11 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
+fcc-react-modules@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/fcc-react-modules/-/fcc-react-modules-1.0.3.tgz#6e6b2dba7c7d7723e192816e0104a03723b9f182"
+  integrity sha512-UC1ZfGGZL9WMM2HtT5l1L9kiwl8nN570ph8y6C3LkgnGDMCzyXufKJ+0DhBayajsVBulfDt4YKPVs7qahuV1pw==
+
 figgy-pudding@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"

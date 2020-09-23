@@ -474,12 +474,23 @@ class CSS extends React.Component
 		);
 	}
 }
-
-let Random = (num) =>
+const Bainari = (num, type, mode = 0) =>
+{
+	if (mode == 0)
+	{
+		num = Number(num)
+		return num.toString(type)
+	} else if (mode == 1)
+	{
+		num = String(num)
+		return parseInt(num, type)
+	}
+}
+const Random = (num) =>
 {
 	return Math.floor(Math.random() * num);
 };
-let nCr = (n = 1, r = 1) =>
+const nCr = (n = 1, r = 1) =>
 {
 	//nCr
 	let x, z;
@@ -516,7 +527,7 @@ let nCr = (n = 1, r = 1) =>
 	y = y / age;
 	return y;
 }
-let Pow = (num, n) =>
+const Pow = (num, n) =>
 {
 	//xのy乗
 	let nums = num;
@@ -526,7 +537,7 @@ let Pow = (num, n) =>
 	}
 	return nums;
 }
-let Repetition = (x = 1) =>
+const Repetition = (x = 1) =>
 {
 	//階乗
 	let age = 1;
@@ -536,7 +547,7 @@ let Repetition = (x = 1) =>
 	}
 	return age;
 }
-let nPr = (n, r) =>
+const nPr = (n, r) =>
 {
 	//nPr
 	let y;
@@ -565,7 +576,7 @@ let nPr = (n, r) =>
 	}
 	return y;
 }
-let Gcd = (f = 1, x = 1) =>
+const Gcd = (f = 1, x = 1) =>
 {
 	//最大公約数
 	let r, tmp;
@@ -585,7 +596,7 @@ let Gcd = (f = 1, x = 1) =>
 	}
 	return x;
 }
-let Ratio = (a, b, x, y) =>
+const Ratio = (a, b, x, y) =>
 {
 	//比率
 	a *= y;
@@ -610,32 +621,32 @@ let Ratio = (a, b, x, y) =>
 		}
 	}
 }
-let Diagonal = (n) =>
+const Diagonal = (n) =>
 {
 	//対角線の数
 	n = (n * (n - 3)) / 2;
 	return n;
 }
-let Maths = new maths();
-let Mathsnew = () =>
+const Maths = new maths();
+const Mathsnew = () =>
 {
 	let math = new maths();
 	return math;
 }
-let Css = new css();
+const Css = new css();
 /*let Cssnew = () => {
 	let cs = new css();
 	return cs;
 }*/
 
-let Zeller = (y = 2000, m = 1, d = 1, lan = 'jp') =>
+const Zeller = (y = 2000, m = 1, d = 1, lan = 'jp') =>
 {
 	if (m < 3)
 	{
 		y--;
 		m += 12;
 	}
-	let w = (y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) + Math.floor((13 * m + 8) / 5) + d) % 7;
+	const w = (y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) + Math.floor((13 * m + 8) / 5) + d) % 7;
 	if (w == 0)
 	{
 		if (lan = 'en')
@@ -709,27 +720,45 @@ let Zeller = (y = 2000, m = 1, d = 1, lan = 'jp') =>
 	}
 	return w;
 }
-let Push = (array, text) =>
+const SVG = (data, option) =>
+{
+	if (option == 'ellipse')
+	{
+		data = <svg width="400" height="200" viewBox="0, 0, 400, 200" xmlns="http://www.w3.org/2000/svg">
+			<ellipse cx="200" cy="100" rx="200" ry="100" fill="#e74c3c" />
+		</svg>
+	}
+	return (
+		data
+	)
+}
+const Push = (array, text) =>
 {
 	let Pushs = array.push(text);
 	return Pushs
 }
-let Com = (num, num2) =>
+const Com = (num, num2) =>
 {
 	let gcdnum = Gcd(3, 4);
 	num = (num * num2) / gcdnum;
 	return num;
 }
-let Spt = (num = 1, num2 = 1) =>
+const Spt = (num = 1, num2 = 1) =>
 {
 	num2 = num + num2;
 	num *= 100;
 	return num / num2;
 }
-let Day = new Date();
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
+const Day = new Date();
+const sleeptime = msec => new Promise(resolve => setTimeout(resolve, msec));
+async function sleep(num, callback = () => { }) 
+{
+	await sleeptime(num);
+	callback()
+}
 export
 {
+	Bainari,
 	sleep,
 	Modal_simple,
 	Accordion,
@@ -762,6 +791,7 @@ export
 	jQuery,
 	$,
 	Beta,
-	UTF
+	UTF,
+	SVG
 };
 //α version
